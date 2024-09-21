@@ -1,0 +1,113 @@
+.home-header{
+    margin: 1%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts spacing between cards */
+    padding: 20px 100px;
+}
+
+.home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    padding: 10px;
+    margin: 1% auto; /* Centers the card horizontally */
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 300px; /* Limit maximum width */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for better visibility */
+    
+    img {
+        width: 100%; /* Adjusts image to fit container */
+        border-radius: 10px;
+    }
+
+    .home-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Centers text inside .home-items */
+        
+        .home-title {
+            padding: 10px; /* Increased padding for better spacing */
+        }
+        
+        span {
+            font-weight: bold;
+        }
+        
+        button {
+            padding: 10px 20px; /* Increased padding for button */
+            border: none;
+            border-radius: 10px;
+            background-color: #00ffbf;
+            cursor: pointer; /* Adds a pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition effect */
+            
+            &:hover {
+                background-color: #00cc99; /* Darker shade on hover */
+            }
+            
+            & a {
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #4CAF50; /* Spinning effect */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto; /* Center horizontally */
+}
+  
+@keyframes spin {
+    100% {
+      transform: rotate(360deg); /* Full rotation */
+    }
+  }
+  
+.loading-container {
+    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+
+/* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
+    .home-card {
+        width: 95%; /* Adjust width for tablets */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .home-card {
+        width: 100%; /* Full width for mobile devices */
+        margin: 2% auto; /* Reduced margin for smaller screens */
+    }
+    
+    img {
+        width: 100%; /* Adjust image width for smaller screens */
+    }
+    
+    .home-items {
+        padding: 5px; /* Adjust padding for better spacing */
+    }
+}

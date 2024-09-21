@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from "./Components/Home/Home";
+import NavBar from "./Components/NavBar/NavBar";
+import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
+import RecipeCategory from "./Components/RecipeCategory/RecipeCategory";
+import FilteredCategory from "./Components/FilteredCategory/FilteredCategory";
+import { useState } from "react";
 
 function App() {
+  const [ searchData, setSearchData] = useState('') 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar setSearchData={setSearchData}/>
+
+        <Routes>
+          <Route exact path="/" element={<Home searchData={searchData}/>}/>
+          <Route path="/recipe/:id" element={<RecipeDetail />}/>
+          <Route exact path="/Category" element={<RecipeCategory />}/>
+          <Route path="/Category/:id" element={<FilteredCategory />}/>
+        </Routes>
+        
+      </div>
+    </Router>
   );
 }
 
