@@ -6,6 +6,7 @@ import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
 import RecipeCategory from "./Components/RecipeCategory/RecipeCategory";
 import FilteredCategory from "./Components/FilteredCategory/FilteredCategory";
 import { useState } from "react";
+import About from "./Components/About/About";
 
 function App() {
   const [ searchData, setSearchData] = useState('') 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/recipe/:id" element={<RecipeDetail />}/>
           <Route exact path="/Category" element={<RecipeCategory />}/>
           <Route path="/Category/:id" element={<FilteredCategory />}/>
+          <Route exact path="/About" element={<About />}/>
         </Routes>
         
       </div>

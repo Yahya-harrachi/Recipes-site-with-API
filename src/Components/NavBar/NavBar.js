@@ -14,7 +14,9 @@ export default function NavBar({setSearchData}) {
         <div className="navbar-items">
         <div className="navbar-text">
         <div className="navbar-title">
-                <h3>Recipe Finder</h3>
+           <Link to={'/'}> 
+                <h3>Recipe Master</h3>
+                </Link>
             </div>
             <Link to={'/'}>
               <h5>Home</h5>
@@ -23,7 +25,9 @@ export default function NavBar({setSearchData}) {
               <h5>Category</h5>
             </Link>
             
-            <h5>About</h5>
+            <Link to={'/About'}>
+              <h5>About</h5>
+            </Link>
         </div>
         <div className="navbar-Search">
             <input type="input" placeholder="Search..."  onChange={SearchingData} />
