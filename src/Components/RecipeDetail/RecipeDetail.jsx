@@ -51,6 +51,7 @@ export default function RecipeDetail() {
                                     <li key={index}>{ingredient}</li>
                                 ))}
                             </ul>
+                            <a href={recipeData.strYoutube} target='_blank'>Watch on Youtube</a>
                         </div>
                         
                     </div>
